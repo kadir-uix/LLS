@@ -29,7 +29,7 @@ export default function ImageModule({module}: Props) {
 
       {/* Caption */}
       {module.variant === 'caption' && module.caption && (
-        <div className="mt-2 max-w-[35rem] text-sm leading-caption text-darkGray">
+        <div className="mt-2 max-w-[80rem] text-sm leading-caption text-darkGray">
           {module.caption}
         </div>
       )}
@@ -93,7 +93,7 @@ const ImageContent = ({module}: Props) => {
         hotspot={image?.hotspot}
         layout="responsive"
         projectId={sanityProjectID}
-        sizes={['50vw, 100vw']}
+        sizes={['100vw, 100vw']}
         src={image?.asset?._ref}
       />
 

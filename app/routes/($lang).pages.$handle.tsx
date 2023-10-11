@@ -5,6 +5,8 @@ import clsx from 'clsx';
 import {Suspense} from 'react';
 import invariant from 'tiny-invariant';
 
+import ModuleGrid from '~/components/modules/ModuleGrid';
+
 import PageHero from '~/components/heroes/Page';
 import PortableText from '~/components/portableText/PortableText';
 import type {SanityPage} from '~/lib/sanity';
@@ -62,7 +64,7 @@ export default function Page() {
           {/* Page hero */}
           <PageHero fallbackTitle={page.title} hero={page.hero} />
           {/* Body */}
-          {page.body && (
+          {/* {page.body && (
             <PortableText
               blocks={page.body}
               centered
@@ -71,7 +73,12 @@ export default function Page() {
                 'md:px-8',
               )}
             />
-          )}
+          )} */}
+           {page.modules && (
+              <div className={clsx('mb-32 mt-24 px-4', 'md:px-8')}>
+                <ModuleGrid items={page.modules} />
+              </div>
+            )}
         </Await>
       </Suspense>
     </ColorTheme>
