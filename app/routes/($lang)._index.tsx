@@ -1,11 +1,9 @@
 import {Await, useLoaderData} from '@remix-run/react';
 import {AnalyticsPageType, type SeoHandleFunction} from '@shopify/hydrogen';
 import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
-import clsx from 'clsx';
 import {SanityPreview} from 'hydrogen-sanity';
 import {Suspense} from 'react';
 
-import HomeHero from '~/components/heroes/Home';
 import ModuleGrid from '~/components/modules/ModuleGrid';
 import type {SanityHomePage} from '~/lib/sanity';
 import {fetchGids, notFound, validateLocale} from '~/lib/utils';
@@ -54,6 +52,14 @@ export async function loader({context, params}: LoaderArgs) {
 
 export default function Index() {
   const {page, gids} = useLoaderData<typeof loader>();
+  // console.log(page.modules);
+  console.log(page.modules);
+  const productModules = page.modules.filter(
+    (module) => module._type === 'module.product',
+  );
+  const heroModules = page.modules.filter(
+    (module) => module._type === 'module.image',
+  );
 
   return (
     <SanityPreview data={page} query={HOME_PAGE_QUERY}>
@@ -61,13 +67,22 @@ export default function Index() {
         <Suspense>
           <Await resolve={gids}>
             {/* Page hero */}
-            {page?.hero && <HomeHero hero={page.hero} />}
+            {/* <ModuleGrid items={productModules} /> */}
 
-            {page?.modules && (
-              <div className={clsx('mb-32 mt-24 px-4', 'md:px-8')}>
-                <ModuleGrid items={page.modules} />
-              </div>
-            )}
+            {/* {page?.hero && <HomeHero hero={page.hero} />} */}
+            {/* <div className="flex">
+              {page?.modules && (
+                <div className={clsx('mb-32 mt-24 px-4', 'md:px-8')}>
+                  <ModuleGrid items={page.modules} />
+                </div>
+              )}
+            </div> */}
+            <div className="flex">
+              <ModuleGrid items={heroModules} />
+            </div>
+            <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
+              <ModuleGrid items={productModules} />
+            </div>
           </Await>
         </Suspense>
       )}

@@ -1,7 +1,7 @@
 import {useMatches} from '@remix-run/react';
 import clsx from 'clsx';
 
-import SanityFooter from '~/components/global/SanityFooter';
+// import SanityFooter from '~/components/global/SanityFooter';
 import LogoIcon from '~/components/icons/Logo';
 import {Link} from '~/components/Link';
 import PortableText from '~/components/portableText/PortableText';
@@ -85,9 +85,6 @@ export default function Footer() {
           />
         )}
       </div>
-
-      {/* Sanity Footer */}
-      <SanityFooter />
     </footer>
   );
 }

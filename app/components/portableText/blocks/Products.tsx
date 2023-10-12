@@ -19,7 +19,7 @@ export default function ProductsBlock({value}: Props) {
     <div
       className={clsx(
         'first:mt-0 last:mb-0', //
-        'my-8 grid grid-cols-1 gap-3',
+        'my-8 grid grid-cols-1',
         multipleProducts ? 'md:grid-cols-2' : 'md:grid-cols-1',
       )}
     >
