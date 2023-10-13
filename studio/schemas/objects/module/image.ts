@@ -3,6 +3,8 @@ import {defineField} from 'sanity'
 
 const VARIANTS = [
   {title: 'Simple', value: undefined},
+
+  {title: 'Video', value: 'video'},
   {title: 'Caption', value: 'caption'},
   {title: 'Call to action', value: 'callToAction'},
   {title: 'Product hotspots', value: 'productHotspots'},
@@ -42,6 +44,14 @@ export default defineField({
       type: 'text',
       rows: 2,
       hidden: ({parent}) => parent.variant !== 'caption',
+    }),
+
+    // Video
+    defineField({
+      name: 'video',
+      title: 'Video',
+      type: 'imageCallToAction',
+      hidden: ({parent}) => parent.variant !== 'video',
     }),
     // Call to action
     defineField({

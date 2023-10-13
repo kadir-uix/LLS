@@ -12,6 +12,15 @@ export interface SanityAssetImage extends Image {
   width: number;
 }
 
+export interface SanityAssetVideo extends File {
+  _type: 'file';
+  altText?: string;
+  blurDataURL: string;
+  height: number;
+  url: string;
+  width: number;
+}
+
 export type SanityCollection = {
   _id: string;
   colorTheme: SanityColorTheme;
@@ -158,7 +167,7 @@ export type SanityModuleCallToAction = {
   _key?: string;
   _type: 'module.callToAction';
   body?: string;
-  content?: SanityAssetImage | SanityProductWithVariant;
+  content?: SanityAssetImage;
   layout: 'left' | 'right';
   link: SanityLink;
   title: string;
@@ -174,6 +183,7 @@ export type SanityModuleCollection = {
 export type SanityModuleImage =
   | SanityModuleImageCallToAction
   | SanityModuleImageCaption
+  | SanityModuleVideoCaption
   | SanityModuleImageProductHotspots
   | SanityModuleImageProductTags;
 
@@ -195,6 +205,12 @@ export type SanityModuleImageBase = {
   image: SanityAssetImage;
 };
 
+export type SanityModuleVideoBase = {
+  _key?: string;
+  _type: 'module.video';
+  video: SanityAssetVideo;
+};
+
 export interface SanityModuleImageCallToAction extends SanityModuleImageBase {
   _key?: string;
   callToAction?: {
@@ -208,6 +224,16 @@ export interface SanityModuleImageCaption extends SanityModuleImageBase {
   _key?: string;
   caption?: string;
   variant: 'caption';
+}
+
+export interface SanityModuleVideoCaption extends SanityModuleImageBase {
+  _key?: string;
+  videoCaption?: string;
+  callToAction?: {
+    link: SanityLink;
+    title?: string;
+  };
+  variant: 'video';
 }
 export interface SanityModuleImageProductHotspots
   extends SanityModuleImageBase {

@@ -11,8 +11,8 @@ import {
 } from '@remix-run/react';
 import {
   Seo,
-  type SeoHandleFunction,
   ShopifySalesChannel,
+  type SeoHandleFunction,
 } from '@shopify/hydrogen';
 import type {Collection, Shop} from '@shopify/hydrogen/storefront-api-types';
 import {
@@ -31,7 +31,7 @@ import {useNonce} from '~/lib/nonce';
 import {DEFAULT_LOCALE} from '~/lib/utils';
 import {LAYOUT_QUERY} from '~/queries/sanity/layout';
 import {COLLECTION_QUERY_ID} from '~/queries/shopify/collection';
-import stylesheet from '~/styles/tailwind.css';
+import stylesheet from '~/styles/styles.css';
 import type {I18nLocale} from '~/types/shopify';
 
 const seo: SeoHandleFunction<typeof loader> = ({data}) => ({

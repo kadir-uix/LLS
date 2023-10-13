@@ -33,6 +33,13 @@ export default function ImageModule({module}: Props) {
           {module.caption}
         </div>
       )}
+
+      {/* Caption */}
+      {module.variant === 'video' && module.videoCaption && (
+        <div className="mt-2 max-w-[80rem] text-sm leading-caption text-darkGray">
+          {module.videoCaption}
+        </div>
+      )}
       {/* Product hotspots */}
       {module.variant === 'productHotspots' && (
         <>
@@ -98,6 +105,36 @@ const ImageContent = ({module}: Props) => {
       />
 
       {/* Call to action */}
+      {module.variant === 'video' && (
+        <div
+          className={clsx(
+            'absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-20 duration-500 ease-out',
+            'group-hover:bg-opacity-30',
+          )}
+        >
+          <div className="mt-[1em] flex flex-col items-center gap-5">
+            {/* Title */}
+            <div
+              className={clsx(
+                'max-w-[30rem] text-xl text-white', //
+                'lg:text-2xl',
+                'xl:text-3xl',
+              )}
+            >
+              {module.callToAction?.title}
+            </div>
+
+            {/* Button */}
+            {module.callToAction?.link && (
+              <Button
+                className={clsx('pointer-events-none bg-white text-offBlack')}
+              >
+                {module.callToAction.title}
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
       {module.variant === 'callToAction' && (
         <div
           className={clsx(

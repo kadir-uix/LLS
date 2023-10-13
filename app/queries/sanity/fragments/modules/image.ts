@@ -26,6 +26,19 @@ export const MODULE_IMAGE = groq`
   (variant == 'caption') => {
     caption,
   },
+  (variant == 'video') => {
+    callToAction {
+      "link": links[0] {
+        (_type == 'linkExternal') => {
+          ${LINK_EXTERNAL}
+        },
+        (_type == 'linkInternal') => {
+          ${LINK_INTERNAL}
+        },
+      },
+      title,
+    }
+  },
   (variant == 'productHotspots') => {
     productHotspots[] {
       _key,

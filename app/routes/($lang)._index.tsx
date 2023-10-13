@@ -53,7 +53,7 @@ export async function loader({context, params}: LoaderArgs) {
 export default function Index() {
   const {page, gids} = useLoaderData<typeof loader>();
   // console.log(page.modules);
-  console.log(page.modules);
+  // console.log(page.modules);
   const productModules = page.modules.filter(
     (module) => module._type === 'module.product',
   );
@@ -77,12 +77,15 @@ export default function Index() {
                 </div>
               )}
             </div> */}
-            <div className="flex">
+            <div className="hero-start flex">
               <ModuleGrid items={heroModules} />
             </div>
-            <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
-              <ModuleGrid items={productModules} />
-            </div>
+            {productModules.length > 0 && (
+              <div className="featured-products px-4">
+                <h2 className="mb-4 mt-8 text-2xl">Featured Products</h2>
+                <ModuleGrid items={productModules} />
+              </div>
+            )}
           </Await>
         </Suspense>
       )}

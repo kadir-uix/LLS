@@ -1,0 +1,20 @@
+@import './tailwind.css';
+.hero-start li {
+  height: 80vh;
+}
+.hero-start li img {
+  height: 100vh !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.featured-products ul {
+  display: grid;
+  margin: 0 0 100px 0;
+}
+.featured-products ul li > div {
+  width: 100%;
+}
+.featured-products ul li img {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */
