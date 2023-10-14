@@ -6,8 +6,7 @@ import {Suspense} from 'react';
 import invariant from 'tiny-invariant';
 
 import ProductGrid from '~/components/collection/ProductGrid';
-import SortOrder from '~/components/collection/SortOrder';
-import {SORT_OPTIONS} from '~/components/collection/SortOrder';
+import SortOrder, {SORT_OPTIONS} from '~/components/collection/SortOrder';
 import CollectionHero from '~/components/heroes/Collection';
 import type {SanityCollectionPage} from '~/lib/sanity';
 import {ColorTheme} from '~/lib/theme';
@@ -113,6 +112,7 @@ export default function Collection() {
             className={clsx(
               'mb-32 mt-8 px-4', //
               'md:px-8',
+              'collection-page',
             )}
           >
             {products.length > 0 && (

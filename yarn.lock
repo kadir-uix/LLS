@@ -2846,10 +2846,10 @@
     type-fest "^3.6.0"
     worktop "^0.7.3"
 
-"@shopify/hydrogen@^2023.7.0":
-  version "2023.7.9"
-  resolved "https://registry.yarnpkg.com/@shopify/hydrogen/-/hydrogen-2023.7.9.tgz#6d19cd0c1a4a307fbca5282a465b8602b4f9ad65"
-  integrity sha512-vuimWh/qdSk2o1Esl8eVOdikeqNFMpZWrkEIgFqAiBnmNy/X+DrX91O4jIlPKpmXYxOZFeRRGIeHf20SkZh0HQ==
+"@shopify/hydrogen@^2023.7.10":
+  version "2023.7.10"
+  resolved "https://registry.yarnpkg.com/@shopify/hydrogen/-/hydrogen-2023.7.10.tgz#5fe10c5383a16c96b8c5c8949121b0faf37d766a"
+  integrity sha512-NMtTn3LtVLWaKzOcrBnjWelgIr1NTnRV2uVDVvZdLJRpl5mKG6kpoC5aPEE12dguidBWRFm3QboGqzMItxOlBQ==
   dependencies:
     "@shopify/hydrogen-react" "2023.7.4"
     content-security-policy-builder "^2.1.1"

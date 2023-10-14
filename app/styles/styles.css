@@ -17,4 +17,13 @@
 }
 .featured-products ul li img {
   width: 100%;
+}
+
+.collection-page ul {
+  display: grid;
+}
+
+.detail-image-gallery div {
+  display: block;
+  position: relative;
 }/*# sourceMappingURL=styles.css.map */

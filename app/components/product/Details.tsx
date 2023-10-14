@@ -46,12 +46,12 @@ export default function ProductDetails({
       {/* Widget (desktop) */}
       <div
         className={clsx(
-          'pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-[315px]',
+          'pointer-events-none absolute right-0 top-0 z-10 hidden h-screen w-[315px]',
           'lg:block',
         )}
       >
-        <div className="sticky top-0 h-screen">
-          <div className="absolute bottom-0 w-full p-4">
+        <div>
+          <div>
             <ProductWidget
               sanityProduct={sanityProduct}
               storefrontProduct={storefrontProduct}
